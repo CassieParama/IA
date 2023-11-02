@@ -1,6 +1,5 @@
-#!/usr/bin/env python3
-
-from roop import core
-
-if __name__ == '__main__':
-    core.run()
+FROM python:3
+WORKDIR /usr/src/app
+COPY . .
+RUN pip install -r requirements.txt
+CMD [ "python", "./test.py" ]
